@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('../static/back.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    form {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #555;
+    }
+    input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="text"]:focus, input[type="number"]:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+    input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        width: 100%;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <h2>Введите ваш маршрут</h2>
+    <form method="POST" action="/res">
+        <label for="city1">Город отбытия:</label>
+        <input type="text" id="city1" name="city1" placeholder="Введите город отбытия" required>
+
+        <label for="city2">Город прибытия:</label>
+        <input type="text" id="city2" name="city2" placeholder="Введите город прибытия" required>
+
+        <label for="days">Через сколько дней планируете прибыть в город?</label>
+        <input type="number" id="days" name="days" min="1" placeholder="Введите количество дней" required>
+
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Доп. город</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('../static/back.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .block {
+        width: 35%;
+        padding: 10px;
+        text-align: center;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+    }
+    .weather {
+        white-space: pre-line;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+    .result {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    .result.red {
+        color: #d9534f;
+    }
+    .result.yellow {
+        color: #f0ad4e;
+    }
+    .result.green {
+        color: #5cb85c;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Прогноз погоды для маршрута</h1>
+    <div class="block">
+        <h2>В городе {{city}} через {{day}} ожидается:</h2>
+        <p class="weather">{{weather}}</p>
+        <p class="result {{color}}">{{res}}</p>
+    </div>
+    <a href="/res" class="btn">
+    <button style="padding: 30px 30px; font-size: 18px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Назад
+    </button>
+    </a>
+    <a href="/visualization">
+    <button style="padding: 30px 30px; font-size: 18px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Перейти к визуализации
+    </button>
+    </a>
+</body>
+</html>
